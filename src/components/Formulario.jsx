@@ -3,6 +3,11 @@ import { useState, useEffect } from 'react';
 
 const Formulario = () => {
     const [nombre, setNombre] = useState('');
+    const [propietario, setPropietario] = useState('');
+    const [email, setEmail] = useState('');
+    const [fecha, setFecha] = useState('');
+    const [sintomas, setSintomas] = useState('');
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -39,9 +44,10 @@ const Formulario = () => {
                     <input
                         id="propietario"
                         type="text" placeholder="Nombre del Propietario"
-                        className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
-
-                    </input>
+                        className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                        value={propietario}
+                        onChange={(e) => { setPropietario(e.target.value) }}
+                    />
                 </div>
                 <div className=" mb-5">
                     <label htmlFor="email" className="block text-gray-700 uppercase font-bold">
@@ -50,9 +56,10 @@ const Formulario = () => {
                     <input
                         id="email"
                         type="email" placeholder="Email Contacto"
-                        className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
-
-                    </input>
+                        className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                        value={email}
+                        onChange={(e) => { setEmail(e.target.value) }}
+                    />
                 </div>
                 <div className=" mb-5">
                     <label htmlFor="alta" className="block text-gray-700 uppercase font-bold">
@@ -61,9 +68,10 @@ const Formulario = () => {
                     <input
                         id="alta"
                         type="date"
-                        className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md">
-
-                    </input>
+                        className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                        value={fecha}
+                        onChange={(e) => { setFecha(e.target.value) }}
+                    />
                 </div>
                 <div className=" mb-5">
                     <label htmlFor="sintomas" className="block text-gray-700 uppercase font-bold">
@@ -71,8 +79,10 @@ const Formulario = () => {
                     </label>
                     <textarea id="sintomas"
                         className="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                        placeholder="describe los sintomas">
-                    </textarea>
+                        placeholder="describe los sintomas"
+                        value={sintomas}
+                        onChange={(e) => { setSintomas(e.target.value) }}
+                    />
                 </div>
 
                 <input type="submit"
