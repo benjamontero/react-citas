@@ -1,4 +1,6 @@
-# React + Vite
+# React + Tailwind + Vite
+
+Website: https://jade-salmiakki-73fbc1.netlify.app
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
